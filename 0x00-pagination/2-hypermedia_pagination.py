@@ -52,7 +52,8 @@ class Server:
         """Hypermedia pagination
         """
         data = self.get_page(page, page_size)
-        next_page = None if len(data) == 0 or page * page_size >= len(self.__dataset) else page + 1
+        next_page = None if len(
+            data) == 0 or page * page_size >= len(self.__dataset) else page + 1
         return {
             "page_size": page_size,
             "page": page,
