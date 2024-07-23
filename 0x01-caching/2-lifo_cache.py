@@ -16,7 +16,7 @@ class LIFOCache(BaseCaching):
                 if key in self.cache_data.keys():
                     del self.cache_data[key]
                 else:
-                    li_key = next(reversed(self.cache_data))
+                    li_key = list(self.cache_data.keys())[-1]
                     print(f"DISCARD: {li_key}")
                     del self.cache_data[li_key]
             self.cache_data[key] = item
